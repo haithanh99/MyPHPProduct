@@ -31,7 +31,7 @@ $resultSet = $stmt -> fetchAll();
 <?php
 foreach ($resultSet as $row) {
 	echo "<li>".
-	$row["Name"].'--'.$row["Price"]."</li>";
+	$row["name"].'--'.$row["price"]."</li>";
 }
 ?>
 </ul>
