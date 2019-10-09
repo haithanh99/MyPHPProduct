@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
+   
+    <title>My first PHP page</title>
+  </head>
 <body>
 
 <h1>Product Page</h1>
@@ -19,7 +23,7 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 	//your sql query
-	$sql = "SELECT * FROM Product";
+	$sql = "SELECT * FROM registercourse ";
 	$stmt = $pdo->prepare($sql);
 	//execute the query on the server and return the result set
 	$stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -31,7 +35,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 	<?php
 		foreach ($resultSet as $row) {
 			echo "<li>" .
-				$row["productid"] . '--'. $row["name"] . '--'. $row["price"]
+				$row["productID"] . '--'. $row["name"] . '--'. $row["price"]
 			. "</li>";
 		}
 	?>
