@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-   
-    <title>My first PHP page</title>
-  </head>
 <body>
 
-<h1>Product Page</h1>
+<h1>Register Page</h1>
 
 <?php
 	echo "Showing all rows from Postgres Database";
@@ -23,7 +19,7 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 	//your sql query
-	$sql = "SELECT * FROM registercourse ";
+	$sql = "SELECT * FROM registercourse";
 	$stmt = $pdo->prepare($sql);
 	//execute the query on the server and return the result set
 	$stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -35,7 +31,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 	<?php
 		foreach ($resultSet as $row) {
 			echo "<li>" .
-				$row["productID"] . '--'. $row["name"] . '--'. $row["price"]
+				$row["productid"] . '--'. $row["name"] . '--'. $row["price"]
 			. "</li>";
 		}
 	?>
