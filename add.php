@@ -16,13 +16,13 @@
         require("connect.php");   
         if(isset($_POST["submit"]))
             {
-                $name = $_POST["proname"];
+                $name = $_POST["product_name"];
                 $price = $_POST["price"];
-                $descrip = $_POST["descrip"];
-                $hinhanh=$_FILES['hinhanh']['name'];
-                $hinhanh_tmp=$_FILEs['hinhanh']['tmp_name'];
+                $description = $_POST["description"];
+                $image=$_FILES['image_link']['name'];
+                $hinhanh_tmp=$_FILEs['image_link']['tmp_name'];
                 move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
-                if ($name == ""||$price == ""|| $descrip == "") 
+                if ($name == ""||$price == ""|| $image == ""|| $description == "") 
                     {
                         ?>
                         <script>
@@ -32,7 +32,7 @@
                     }
                 else
                     {
-                        $sql = "select * from product where proname='$name'";
+                        $sql = "select * from product where product_name='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
@@ -44,7 +44,7 @@
                         }
                         else
                         {
-                            $sql = "INSERT INTO product(proname, price, descrip,hinhanh) VALUES ('$name','$price','$descrip','$hinhanh')";
+                            $sql = "INSERT INTO product(product_name, price,image_link, description) VALUES ('$name','$price','$image','$description')";
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
