@@ -18,11 +18,9 @@
             {
                 $name = $_POST["product_name"];
                 $price = $_POST["price"];
+                $image = $_POST["image_link"];
                 $description = $_POST["description"];
-                $image=$_FILES['image_link']['name'];
-                $hinhanh_tmp=$_FILEs['image_link']['tmp_name'];
-                move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
-                if ($name == ""||$price == ""|| $image == ""|| $description == "") 
+               
                     {
                         ?>
                         <script>
@@ -44,7 +42,7 @@
                         }
                         else
                         {
-                            $sql = "INSERT INTO product(product_name, price,image_link, description) VALUES ('$name','$price','$image','$description')";
+                            $sql = "INSERT INTO product(product_name, price,image_link description) VALUES ('$name','$price','$image',$descrip')";
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
@@ -60,12 +58,12 @@
             <input type="text" width="120px" height="30" name="proname" placeholder="Name"> <br>
             <input type="text" width="120px" height="30" name="price" placeholder="Price"> <br>
             <input type="text" width="120px" height="30" name="descrip" placeholder="Description"> <br>
-            <input type="file" name="hinhanh" placeholder="image" border = "1px"><br>
+            <input type="file" name="image" placeholder="images" border = "1px"><br>
             <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
         <br>
         <button><a href="/managing.php">Back</a></button>
     </div>
-</body>
+</body>S
 
 </html>
