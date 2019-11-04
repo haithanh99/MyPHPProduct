@@ -18,9 +18,12 @@
             {
                 $name = $_POST["product_name"];
                 $price = $_POST["price"];
-                $image = $_POST["image_link"];
-                $description = $_POST["description"];
-               
+                
+                $description = $_POST["descrip"];
+                $image_link=$_FILES['image_link']['name'];
+                $image_link_tmp=$_FILEs['image_link']['tmp_name'];
+                move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
+                if ($name == ""||$price == ""|| $image_link == ""|| $descrip == "") 
                     {
                         ?>
                         <script>
@@ -30,7 +33,7 @@
                     }
                 else
                     {
-                        $sql = "select * from product where product_name='$name'";
+                        $sql = "select * from product where proname='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
@@ -42,7 +45,7 @@
                         }
                         else
                         {
-                            $sql = "INSERT INTO product(product_name, price,image_link description) VALUES ('$name','$price','$image',$descrip')";
+                            $sql = "INSERT INTO product(product_name, price, descrip,image_link) VALUES ('$name','$price','$descrip','$image_link')";
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
@@ -58,12 +61,12 @@
             <input type="text" width="120px" height="30" name="proname" placeholder="Name"> <br>
             <input type="text" width="120px" height="30" name="price" placeholder="Price"> <br>
             <input type="text" width="120px" height="30" name="descrip" placeholder="Description"> <br>
-            <input type="file" name="image" placeholder="images" border = "1px"><br>
+            <input type="file" name="image_link" placeholder="images" border = "1px"><br>
             <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
         <br>
         <button><a href="/managing.php">Back</a></button>
     </div>
-</body>S
+</body>
 
 </html>
