@@ -17,13 +17,15 @@
         if(isset($_POST["submit"]))
             {
                 $name = $_POST["product_name"];
-                $price = $_POST["price"];
-                
+                $price = $_POST["price"];               
                 $description = $_POST["description"];
                 $image_link=$_FILES['image_link']['name'];
                 $image_link_tmp=$_FILEs['image_link']['tmp_name'];
                 move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
-                if ($name == ""||$price == ""|| $image_link == ""|| $description == "") 
+                $brand = $_POST["brand"];
+                $category_id = $_POST["category_id"];
+                $supplier_id = $_POST["supplier_id"];
+                if ($name == ""||$price == ""||  $description == ""$image_link == ""||$brand == ""||$category_id == ""||$supplier_id == ""||) 
                     {
                         ?>
                         <script>
