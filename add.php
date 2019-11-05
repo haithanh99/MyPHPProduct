@@ -17,15 +17,12 @@
         if(isset($_POST["submit"]))
             {
                 $name = $_POST["product_name"];
-                $price = $_POST["price"];               
+                $price = $_POST["price"];
                 $description = $_POST["description"];
                 $image_link=$_FILES['image_link']['name'];
                 $image_link_tmp=$_FILEs['image_link']['tmp_name'];
-                move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
-                $brand = $_POST["brand"];
-                $category_id = $_POST["category_id"];
-                $supplier_id = $_POST["supplier_id"];
-                if ($name == ""||$price == ""||  $description == ""$image_link == ""||$brand == ""||$category_id == ""||$supplier_id == ""||) 
+                move_uploaded_file($image_link_tmp,'./uploads/'.$image_link);
+                if ($name == ""||$price == ""|| $description == "") 
                     {
                         ?>
                         <script>
@@ -35,7 +32,7 @@
                     }
                 else
                     {
-                        $sql = "select * from product where product_name='$name'";
+                        $sql = "select * from product where proname='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
@@ -47,7 +44,7 @@
                         }
                         else
                         {
-                            $sql = "INSERT INTO product(product_name, price, image_linkdescription,brand, category_id, supplier_id) VALUES ('$name','$price','$description','$image_link','$brand','$category_id','$supplier_id')";
+                            $sql = "INSERT INTO product(productname, price, description,image_link) VALUES ('$name','$price','$description','$image_link')";
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
@@ -60,14 +57,11 @@
             }
 			?>
         <form  action="add.php" method="POST" enctype="multipart/form-data">
-            <input type="text" width="120px" height="30" name="product_name" placeholder="product_name"> <br>
-            <input type="text" width="120px" height="30" name="price" placeholder="price"> <br>
-            <input type="text" width="120px" height="30" name="description" placeholder="description"> <br>
-            <input type="file" name="image_link" placeholder="images" border = "1px"><br>
-            <input type="text" width="120px" height="30" name="brand" placeholder="brand"> <br>
-            <input type="text" width="120px" height="30" name="category_id" placeholder="category_id"> <br>
-            <input type="text" width="120px" height="30" name="supplier_id" placeholder="supplier_id"> <br>
-            <button type="submit" value="Add" name="submit">Add</button>
+            <input type="text" width="120px" height="30" name="proname" placeholder="Name"> <br>
+            <input type="text" width="120px" height="30" name="price" placeholder="Price"> <br>
+            <input type="text" width="120px" height="30" name="descrip" placeholder="Description"> <br>
+            <input type="file" name="hinhanh" placeholder="image" border = "1px"><br>
+            <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
         <br>
         <button><a href="/managing.php">Back</a></button>
