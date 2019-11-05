@@ -57,6 +57,9 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
                     <td class="info"><?php echo $row['price']?></td> 
                     <td class="info"><?php echo $row['description']?></td> 
                     <td class="info"><img src="uploads/<?php echo $row['image_link'] ?>" width="100" height="100"></td> 
+                    <td class="info"><?php echo $row['brand']?></td>
+                    <td class="info"><?php echo $row['category_id']?></td>
+                    <td class="info"><?php echo $row['supplier_id']?></td>
                     <td class="info">
                         <form action='/delete.php' method="POST">
                             <input type='hidden' name='product_id' value='<?php echo $row['product_id']?>'>
