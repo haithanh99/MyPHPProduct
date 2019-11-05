@@ -45,6 +45,7 @@
                         else
                         {
                             $sql = "INSERT INTO product(productname, price, description,image_link) VALUES ('$name','$price','$description','$image_link')";
+                            $add=execute($sql);
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
