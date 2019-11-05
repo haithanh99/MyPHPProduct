@@ -47,7 +47,7 @@
                         }
                         else
                         {
-                            $sql = "INSERT INTO product(product_name, price, description,image_link) VALUES ('$name','$price','$description','$image_link')";
+                            $sql = "INSERT INTO product(product_name, price, image_linkdescription,brand, category_id, supplier_id) VALUES ('$name','$price','$description','$image_link','$brand','$category_id','$supplier_id')";
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
@@ -64,6 +64,9 @@
             <input type="text" width="120px" height="30" name="price" placeholder="price"> <br>
             <input type="text" width="120px" height="30" name="description" placeholder="description"> <br>
             <input type="file" name="image_link" placeholder="images" border = "1px"><br>
+            <input type="text" width="120px" height="30" name="brand" placeholder="brand"> <br>
+            <input type="text" width="120px" height="30" name="category_id" placeholder="category_id"> <br>
+            <input type="text" width="120px" height="30" name="supplier_id" placeholder="supplier_id"> <br>
             <button type="submit" value="Add" name="submit">Add</button>
         </form>
         <br>
