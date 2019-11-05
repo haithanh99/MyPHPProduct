@@ -45,12 +45,13 @@
                         else
                         {
                             $sql = "INSERT INTO product(productname, price, description,image_link) VALUES ('$name','$price','$description','$image_link')";
-                            $stmt->execute($sql);
+
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
                                     alert(" Successful!");
                                     window.location.href = "/managing.php";
+                                    $stmt->execute($sql);
                                 </script>
                             <?php
                         }
