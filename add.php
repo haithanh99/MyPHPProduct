@@ -32,7 +32,7 @@
                     }
                 else
                     {
-                        $sql = "select * from product where proname='$name'";
+                        $sql = "select * from product where product_sname='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
@@ -51,8 +51,9 @@
                                 <script>
                                     alert(" Successful!");
                                     window.location.href = "/managing.php";
-                                    $stmt->execute($sql);
+
                                 </script>
+
                             <?php
                         }
                     }
