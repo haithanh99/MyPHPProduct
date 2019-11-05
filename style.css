@@ -23,7 +23,8 @@ body {
     font-size: 30px;
     font-weight: bold;
     font-style: oblique;
-    padding: 20px;
+    padding: auto;
+    margin:auto;
 }
 
 .content table,
