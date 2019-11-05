@@ -19,11 +19,11 @@
                 $name = $_POST["product_name"];
                 $price = $_POST["price"];
                 
-                $description = $_POST["descrip"];
+                $description = $_POST["description"];
                 $image_link=$_FILES['image_link']['name'];
                 $image_link_tmp=$_FILEs['image_link']['tmp_name'];
                 move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
-                if ($name == ""||$price == ""|| $image_link == ""|| $descrip == "") 
+                if ($name == ""||$price == ""|| $image_link == ""|| $description == "") 
                     {
                         ?>
                         <script>
@@ -58,11 +58,11 @@
             }
 			?>
         <form  action="add.php" method="POST" enctype="multipart/form-data">
-            <input type="text" width="120px" height="30" name="product_name" placeholder="Name"> <br>
-            <input type="text" width="120px" height="30" name="price" placeholder="Price"> <br>
-            <input type="text" width="120px" height="30" name="descrip" placeholder="Description"> <br>
+            <input type="text" width="120px" height="30" name="product_name" placeholder="product_name"> <br>
+            <input type="text" width="120px" height="30" name="price" placeholder="price"> <br>
+            <input type="text" width="120px" height="30" name="description" placeholder="description"> <br>
             <input type="file" name="image_link" placeholder="images" border = "1px"><br>
-            <button type="submit" value="Add" name="submit">Add Information</button>
+            <button type="submit" value="Add" name="submit">Add</button>
         </form>
         <br>
         <button><a href="/managing.php">Back</a></button>

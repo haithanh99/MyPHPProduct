@@ -52,14 +52,14 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
             foreach ($pdo->query($sql) as $row) {
             ?>
                 <tr>
-                    <td class="info"><?php echo $row['productid']?></td> 
-                    <td class="info"><?php echo $row['proname']?></td> 
+                    <td class="info"><?php echo $row['product_id']?></td> 
+                    <td class="info"><?php echo $row['product_name']?></td> 
                     <td class="info"><?php echo $row['price']?></td> 
-                    <td class="info"><?php echo $row['descrip']?></td> 
-                    <td class="info"><img src="uploads/<?php echo $row['hinhanh'] ?>" width="100" height="100"></td> 
+                    <td class="info"><?php echo $row['description']?></td> 
+                    <td class="info"><img src="uploads/<?php echo $row['image_link'] ?>" width="100" height="100"></td> 
                     <td class="info">
                         <form action='/delete.php' method="POST">
-                            <input type='hidden' name='productid' value='<?php echo $row['productid']?>'>
+                            <input type='hidden' name='productid' value='<?php echo $row['product_id']?>'>
                             <input class="edit-btn" type='submit' value='Delete'>
                         </form> <br>
 
@@ -72,7 +72,7 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
         </table>
         <br>
 
-        <button ><a href="/add.php">Add New Product</a></button>
+        <button ><a href="/add.php">Add New</a></button>
         <br><br>
     </div>
 </body>
