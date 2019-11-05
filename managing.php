@@ -42,6 +42,10 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
                 <th class="tit">Price</th>
                 <th class="tit">Product Description</th>
                 <th class="tit">Image</th>
+                <th class="tit">Brand</th>
+                <th class="tit">Category</th>
+                <th class="tit">Supplier</th>
+
                 <th class="tit">Delete Product</th>
             </tr>
 
