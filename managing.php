@@ -1,10 +1,10 @@
 <?php 
 require_once './connect.php';  
-if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
+if(isset($_POST["username"]) && isset($_POST["password"]))
 {
-	$user = $_POST["aduser"];
-	$pass = $_POST["adpass"];
-	$sql ="SELECT * FROM account WHERE username = '$user' AND pwd= '$pass'";
+	$user = $_POST["username"];
+	$pass = $_POST["password"];
+	$sql ="SELECT * FROM dangnhap WHERE username = '$user' AND password= '$pass'";
 	$rows = pg_query($sql);
 	if(pg_num_rows($rows)==1) { ?>
 		<script>
@@ -15,7 +15,7 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
         ?>
             <script>
                 alert(" Username Or Password Is Wrong");
-                window.location.href = "/index.php";
+                window.location.href = "/index1.php";
             </script>
         <?php }
 }
@@ -59,7 +59,7 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
                     <td class="info"><img src="uploads/<?php echo $row['image_link'] ?>" width="100" height="100"></td> 
                     <td class="info">
                         <form action='/delete.php' method="POST">
-                            <input type='hidden' name='productid' value='<?php echo $row['product_id']?>'>
+                            <input type='hidden' name='product_id' value='<?php echo $row['product_id']?>'>
                             <input class="edit-btn" type='submit' value='Delete'>
                         </form> <br>
 
