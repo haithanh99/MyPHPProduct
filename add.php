@@ -33,7 +33,7 @@
                     }
                 else
                     {
-                        $sql = "select * from product where proname='$name'";
+                        $sql = "select * from product where product_name='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
@@ -45,7 +45,7 @@
                         }
                         else
                         {
-                            $sql = "INSERT INTO product(product_name, price, descrip,image_link) VALUES ('$name','$price','$descrip','$image_link')";
+                            $sql = "INSERT INTO product(product_name, price, description,image_link) VALUES ('$name','$price','$description','$image_link')";
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
@@ -58,7 +58,7 @@
             }
 			?>
         <form  action="add.php" method="POST" enctype="multipart/form-data">
-            <input type="text" width="120px" height="30" name="proname" placeholder="Name"> <br>
+            <input type="text" width="120px" height="30" name="product_name" placeholder="Name"> <br>
             <input type="text" width="120px" height="30" name="price" placeholder="Price"> <br>
             <input type="text" width="120px" height="30" name="descrip" placeholder="Description"> <br>
             <input type="file" name="image_link" placeholder="images" border = "1px"><br>
