@@ -1,11 +1,4 @@
-body{
-	background: #dccdc;
-	margin:0;
-	padding:0;
-	font-family: Verdana;
-	font-size: 0.9em;
-	line-height: 1.5em;
-}
+
 #main{
 	width: 1000px;
 	margin:0 auto;
@@ -66,7 +59,7 @@ body{
 	float:right;
 	width: 100%;
 }
-#content{
+#contentpage{
 	margin-right: 300px;
 	background: #f1f9fd;
 }
