@@ -1,7 +1,7 @@
 <?php
 include 'top.php';
 ?>
-<h1>Noi dung tieu de</h1>
+<h1>Product </h1>
 <div class="col-md-8">
 					<div id="noidung"> <!-- dinh dang cho noi dung -->
 						
