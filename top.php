@@ -5,10 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=ege" >
 	<meta  name="viewport" content="width=devce-width, initial-scale=1">
-	<title>Giao dien 2 cot voi menu phai</title>
-	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<title></title>
+
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/Stylepage.css">
 </head>
