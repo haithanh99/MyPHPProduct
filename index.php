@@ -10,7 +10,7 @@ include 'top.php';
 			<img src="https://bit.ly/2NlBSb1>" id="images"/>
 			
 			<p class="price"> Our Price: 629.000 VNĐ></p>
-			<button type="button" class="btn btn-success" > Details</button>
+			<button type="button" class="btn btn-success" background-color=#0B9E1C > Details</button>
 		</div>
 </div>
 
