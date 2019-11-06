@@ -1,4 +1,4 @@
-<div class="col-md-8>
+<div class="col-md-8">
 <div class="col-md-3">
 			<h4>Xe Đạp 3 Bánh Đa Năng Glee Plus Tím</h4>
 			<img src="./images/3300233_1.jpg>" alt="Xe Đạp 3 Bánh Đa Năng Glee Plus Tím" id="images"/>
