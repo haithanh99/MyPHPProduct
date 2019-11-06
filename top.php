@@ -38,6 +38,6 @@
 		</div><!-- ket thuc phan banner -->
 		
 		<div id="maincontent"> <!-- phan bao cua content -->
-			<div id="content"> 
+			<div id="contentpage"> 
 				<div class="dinhdang">
 					<!-- phan dinh dang chung cho content va right -->
