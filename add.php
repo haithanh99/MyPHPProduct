@@ -16,12 +16,14 @@
         require("connect.php");   
         if(isset($_POST["submit"]))
             {
+                $data = [
                 $name = $_POST["product_name"];
                 $price = $_POST["price"];
                 $description = $_POST["description"];
                 $image_link=$_FILES['image_link']['name'];
                 $image_link_tmp=$_FILEs['image_link']['tmp_name'];
                 move_uploaded_file($image_link_tmp,'./uploads/'.$image_link);
+            ]
                 if ($name == ""||$price == ""|| $description == "") 
                     {
                         ?>
@@ -32,7 +34,7 @@
                     }
                 else
                     {
-                        $sql = "select * from product where product_sname='$name'";
+                        $sql = "select * from product where product_name='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
@@ -47,7 +49,7 @@
                         
                             $sql = "INSERT INTO product(productname, price, description,image_link) VALUES (':name',':price',':description',':image_link')";
 
-                            pg_query($conn,$sql); 
+                            $sql->execute($data);
 
                             ?> 
                                 <script>
