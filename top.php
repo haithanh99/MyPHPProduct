@@ -26,7 +26,7 @@
 				<li><a href="#">Phụ kiện/ Đô dùng</a></li>
 				
 				<li><a href="#">Đăng ký</a></li>
-				<li><a href="#">Đăng nhập</a></li>
+				<li><a href="index1.php">Đăng nhập</a></li>
 			</ul>
 		</div><!-- ket thuc phan menutop -->
 	</div> <!-- ket thuc phan top -->
