@@ -44,9 +44,11 @@
                         }
                         else
                         {
+                            <?php
                             $sql = "INSERT INTO product(productname, price, description,image_link) VALUES ('$name','$price','$description','$image_link')";
 
-                            pg_query($conn,$sql);
+                            pg_query($conn,$sql); 
+                            ?>
                             ?> 
                                 <script>
                                     alert(" Successful!");
